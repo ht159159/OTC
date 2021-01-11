@@ -1,0 +1,98 @@
+@import "../../style/common.scss";
+.index {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  .login-header {
+    width: 100%;
+    padding: rem(12) 0;
+    display: flex;
+    font-size: rem(26);
+    box-sizing: border-box;
+    // border-bottom: 1px solid #000;
+    background-color: #fff;
+    box-shadow: 0px 0px rem(11) rem(3) rgba(20%, 20%, 40%, 0.3);
+
+    div {
+      margin-left: rem(15);
+    }
+  }
+
+  .login-content {
+    width: 100%;
+    display: flex;
+    margin-top: rem(10);
+    padding: 0 rem(20);
+    box-sizing: border-box;
+    justify-content: space-between;
+
+    .login-icon {
+      width: rem(50);
+      height: rem(50);
+      // background-color: #000;
+      margin-top: rem(10);
+    }
+
+    .input-box {
+      width: 75%;
+      display: flex;
+      flex-flow: wrap;
+      justify-content: center;
+
+      input {
+        width: 100%;
+        height: rem(38);
+        margin: rem(10) 0;
+        padding: 0 rem(5);
+        font-size: rem(16);
+        font-weight: bold;
+        box-sizing: border-box;
+        border: none;
+        color: #000;
+      }
+
+      input::-webkit-input-placeholder {
+        color: $gray;
+      }
+      // input:-ms-input-placeholder { // IE10+
+      //     color: #f8f8f8;
+      // }
+      // input:-moz-placeholder { // Firefox4-18
+      //     color: #f8f8f8;
+      // }
+      // input::-moz-placeholder { // Firefox19+
+      //     color: #f8f8f8;
+      // }
+    }
+  }
+
+  .login-btn {
+    width: 90%;
+    padding: rem(10) 0;
+    font-size: rem(16);
+    color: #fff;
+    background-color: $blue;
+    border-radius: rem(30);
+    margin-top: rem(30);
+  }
+
+  // 左箭头
+  .left-arrow {
+    display: inline-block;
+    width: rem(20);
+    height: rem(20);
+  }
+
+  .left-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: rem(12);
+    width: rem(12);
+    border-width: rem(3) rem(3) 0 0;
+    border-color: #000;
+    border-style: solid;
+    transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+  }
+}

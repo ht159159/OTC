@@ -1,0 +1,51 @@
+<div class="OtherPage">
+    <!-- <HeaderNav></HeaderNav> -->
+    <div class="trading-information">
+        <div class="trading-information-headShot">
+            <img src="../../assets/images/images.jpg" alt="">
+        </div>
+        <div class="trading-information-content">
+            <span v-if="userInfo.nickName">{{userInfo.nickName}}</span>
+            <span v-else>...</span>
+        </div>
+    </div>
+    <div class="other-list-box">
+        <div class="other-list-box-title">
+            账号信息
+        </div>
+        <div class="other-list-box-balance">
+            账户余额(USDT)
+            <div class="other-list-box-balance-value">
+                <span v-if="userInfo.balance">{{userInfo.balance}}</span>
+                <span v-else>加载中...</span>
+            </div>
+        </div>
+        <div class="other-list-box-address">
+            ERC20 USDT钱包地址[<a href="javascript:void(0)" v-clipboard:copy="userInfo.address" v-clipboard:success="onCopy"
+                v-clipboard:error="onError">复制</a>]
+            <div class="other-list-box-address-value">
+                <span id="copythis" v-if="userInfo.address">{{userInfo.address}}</span>
+                <span v-else>加载中...</span>
+            </div>
+        </div>
+
+        <div class="other-list-box-item">
+            <div class="other-list-item" @click="setCollectionPage">
+                <div class="other-list-item-icon paymentMsg"></div>
+                <div>收款信息</div>
+            </div>
+            <div class="other-list-item" @click="Transactions">
+                <div class="other-list-item-icon transactions"></div>
+                <div>财务信息</div>
+            </div>
+            <div class="other-list-item" @click="tips">
+                <div class="other-list-item-icon guide"></div>
+                <div>操作指南</div>
+            </div>
+            <div class="other-list-item" @click="goToHome">
+                <div class="other-list-item-icon home"></div>
+                <div>返回大厅</div>
+            </div>
+        </div>
+    </div>
+</div>

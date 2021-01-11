@@ -1,0 +1,26 @@
+<div class="Transactions" @scroll="gd_add">
+    <HeaderNav></HeaderNav>
+    <div class="Transactions-detail" v-for="item in DespoitsList">
+        <div class="Transactions-detail-title">
+            <div class="title-box">
+                <div class="title-type">充币</div>
+                <div class="title-type-id">{{item.to.substring(0,10)}}...{{item.to.substr(-10,10)}}</div>
+            </div>
+            <div class="title-status Completed">
+                {{item.statusName}}
+            </div>
+        </div>
+        <div class="Transactions-detail-content">
+            <div class="content-detail">
+                <p>交易时间 : {{item.updateTime}}</p>
+                <p>交易数量 : <span class="buy">+{{item.value}}</span> {{item.tokenSymbol}}</p>
+                <p>TXHASH : <span>{{item.txHash.substring(0,12)}}...{{item.txHash.substr(-12,12)}}</span> [<a href="javascript:void(0)" v-clipboard:copy="item.txHash"
+                    v-clipboard:success="onCopy"
+                    v-clipboard:error="onError">复制</a>]</p>
+                <p>确认区块 : {{item.blockNumber}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="noMoreData" v-if="moreData">加载中...</div>
+    <div class="noMoreData"></div>
+</div>

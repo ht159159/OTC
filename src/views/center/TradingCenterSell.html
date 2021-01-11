@@ -1,0 +1,32 @@
+<div class="trading-detail-box">
+
+    <div class="trading-detail" v-for="(item, i) in sellMerchantListData">
+        <div class="trading-detail-title">
+            <div class="title-box">
+                <div class="title-icon"></div>
+                <div class="title-name">{{item.merchantNickName}}</div>
+            </div>
+            <div class="title-content">
+                <!--平均放行 2分钟 | 最近成交 77 | 成功率 91.67%-->
+            </div>
+        </div>
+        <div class="trading-detail-content">
+            <div class="content-detail">
+                <p class="content-name">{{item.realPrice}} <span>{{item.currencyName}}</span></p>
+                <p>交易范围: {{item.minAmount}}~{{item.maxAmount}}</p>
+                <p>数量: {{item.usableAmount}}</p>
+                <p>币种: USDT</p>
+            </div>
+            <div class="content-btn">
+                <div class="pay-icon-box">
+                    <div class="pay-icon" v-for="type in item.payTypes" v-if="type != ''"
+                        :class="{'alipay-icon': type == '2', 'bankCard-icon': type == '1', 'weChat-icon': type == '3'}">
+                    </div>
+                </div>
+                <div class="sell-btn" @click="sellPage(item.id)">
+                    出售
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

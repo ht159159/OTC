@@ -1,0 +1,427 @@
+@import "../../style/common.scss";
+.OrderDetail {
+  overflow-y: hidden;
+  //height: 100%;
+  .detail-main {
+    width: 100%;
+    height: calc(100% - 50px);
+    // overflow-y: scroll;
+    position: relative;
+
+    .detail-title {
+      width: 100%;
+      display: flex;
+      padding: rem(10) 0;
+      box-sizing: border-box;
+      //margin-bottom: rem(3);
+      font-weight: bold;
+      background-color: #fff;
+      justify-content: center;
+
+      a {
+        text-decoration: underline;
+      }
+
+      span{
+        margin-right: rem(5);
+      }
+    }
+
+    .detail-content {
+      width: 100%;
+      // margin-bottom: rem(10);
+      .detail-content-header {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: #fff;
+        font-weight: bold;
+
+        > div {
+          width: 33.3%;
+          height: 8vh;
+          border-left: rem(1) solid #d7d7d7;
+          border-top: rem(1) solid #d7d7d7;
+          border-bottom: rem(1) solid #d7d7d7;
+          padding: rem(5) 0;
+          box-sizing: border-box;
+        }
+        .detail-content-buy,
+        .detail-content-sell {
+          white-space: nowrap;
+          p:first-child {
+            font-size: rem(14);
+            color: $gray;
+          }
+          p:last-child {
+            //overflow-x: scroll;
+            font-size: rem(16);
+            span {
+              font-size: rem(12);
+            }
+          }
+        }
+
+        .detail-content-sell {
+          color: $blue;
+        }
+
+        div:last-child {
+          line-height: 7vh;
+          color: #fff;
+          border-left: none;
+          font-size: rem(14);
+        }
+
+        .detail-status {
+          background-color: $gray;
+        }
+        .Paid {
+          background-color: #4eb345;
+        }
+        .Complete {
+          background-color: #277fe0;
+        }
+        .Unpaid {
+          background-color: red;
+        }
+      }
+
+      .detail-item {
+        width: 100%;
+        line-height: 1.2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: rem(5) rem(10);
+        box-sizing: border-box;
+        border: rem(1) solid #d7d7d7;
+        border-top: none;
+        font-size: rem(12);
+        color: $gray;
+        //font-weight: bold;
+        div:last-child {
+          font-size: rem(12);
+        }
+      }
+      .chatHeader, .chatHeaderSell {
+        width: 100%;
+        padding: rem(10);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background-color: #f2f2f2;
+        border-bottom: 1px solid #d7d7d7;
+
+        .cancelDeal,
+        .paid {
+          width: 40%;
+          font-size: rem(18);
+          padding: rem(5) 0;
+          border-radius: 3px;
+        }
+
+        .cancelDeal {
+          color: #000;
+          background-color: #fff;
+        }
+
+        .paid {
+          color: #fff;
+          background-color: $blue;
+        }
+
+        .prompt {
+          text-align: left;
+          width: 100%;
+          margin-top: rem(10);
+          color: red;
+          font-size: 12px;
+          p{
+            line-height: 20px;
+          }
+        }
+
+        .collection {
+          width: 100%;
+          display: flex;
+          flex-flow: column;
+          align-items: flex-start;
+          border-bottom: 1px solid #c4c4c4;
+          //padding: 10px 0;
+          margin-bottom: 10px;
+          box-sizing: border-box;
+          color: #8c8c8c;
+
+          .collection-name{
+            margin-bottom: 10px;
+          }
+
+          select{
+            width: 100%;
+            span{
+              color: $blue;
+            }
+          }
+        }
+
+        .collection select,
+        .collectionSeller select {
+          border: none;
+          background: none;
+          font-size:14px;
+        }
+      }
+    }
+
+    .detail-introduction {
+      width: 100%;
+
+      .introduction-box {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #fff;
+        padding: rem(8) rem(10);
+        font-size: rem(12);
+        box-sizing: border-box;
+
+        .introduction-userIcon {
+          width: rem(15);
+          height: rem(15);
+          // background-color: beige;
+          background-image: url("../../assets/images/icon/headPortrait-icon.png");
+          background-size: contain;
+        }
+        .introduction-icon {
+          display: flex;
+          .level-icon {
+            width: rem(15);
+            height: rem(15);
+            // background-color: brown;
+            margin: 0 rem(1);
+            background-image: url("../../assets/images/icon/level-icon.png");
+            background-size: contain;
+          }
+        }
+
+        .introduction-content {
+          font-size: rem(12);
+        }
+      }
+      .detail-introduction-list {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .detail-introduction-item {
+          width: 33.3%;
+          border: rem(1) solid #d7d7d7;
+          padding: rem(10) rem(10);
+          box-sizing: border-box;
+          background-color: #fff;
+
+          p:first-child {
+            color: $gray;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .accordion {
+      color: $gray;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #d7d7d7;
+      border-bottom: 1px solid $gray;
+    }
+
+    .chatBox {
+      width: 100%;
+      // height: calc(100% - 189.359px);
+      .chatHeader, .chatHeaderSell {
+        width: 100%;
+        padding: rem(10);
+        box-sizing: border-box;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background-color: #f2f2f2;
+        border-bottom: 1px solid #d7d7d7;
+
+        .cancelDeal,
+        .paid {
+          width: 45%;
+          font-size: rem(18);
+          padding: rem(10) 0;
+          border-radius: 3px;
+        }
+
+        .cancelDeal {
+          color: #000;
+          background-color: #fff;
+        }
+
+        .paid {
+          color: #fff;
+          background-color: $blue;
+        }
+
+        .prompt {
+          width: 100%;
+          margin-top: rem(20);
+          color: red;
+        }
+
+        .collection {
+          width: 100%;
+          display: flex;
+          flex-flow: column;
+          align-items: flex-start;
+          border-bottom: 1px solid #c4c4c4;
+          padding: 10px 0;
+          margin-bottom: 10px;
+          box-sizing: border-box;
+          color: #8c8c8c;
+          font-weight: bold;
+
+          .collection-name{
+            margin-bottom: 10px;
+          }
+
+          select{
+            width: 100%;
+            span{
+              color: $blue;
+            }
+          }
+        }
+
+        .collection select,
+        .collectionSeller select {
+          border: none;
+          background: none;
+          font-weight: bold;
+        }
+      }
+
+      .chat {
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+        // height: calc(100% - 190px);
+        .chatMsg {
+          max-width: 55%;
+          padding: rem(5);
+          box-sizing: border-box;
+          border: 1px solid #d7d7d7;
+          background-color: #fff;
+          border-radius: 10px;
+          // margin: 5px;
+          word-wrap: break-word;
+          // margin-bottom: 15px;
+          margin: 0 auto;
+          margin-top: rem(20);
+          margin-left: rem(5);
+          img{
+            max-width: 80%;
+          }
+        }
+        .userMsg {
+          border: 1px solid $blue;
+          color: #fff;
+          background-color: $blue;
+          margin: 0 auto;
+          margin-top: rem(20);
+          margin-right: rem(5);
+        }
+      }
+
+      .chatFooter {
+        position: fixed;
+        display: flex;
+        width: 100%;
+        padding: rem(10) rem(20);
+        box-sizing: border-box;
+        background-color: #f2f2f2;
+        bottom: 0;
+        left: 0;
+        justify-content: space-between;
+
+        .uploadImg {
+          position: relative;
+          width: rem(40);
+          height: rem(40);
+          padding: rem(5);
+          box-sizing: border-box;
+          background-image: url("../../assets/images/icon/img-icon.png");
+          background-color: #fff;
+          background-repeat: no-repeat;
+          background-position: center center;
+
+          .imgInput {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+          }
+        }
+
+        .chatInputBox {
+          width: 85%;
+          position: relative;
+          display: flex;
+          align-items: center;
+
+          .chatInput {
+            width: 100%;
+            height: rem(40);
+            border: none;
+            border-radius: 20px;
+            padding-left: rem(10);
+            padding-right: rem(50);
+          }
+
+          .chatSubmit {
+            width: rem(40);
+            height: rem(40);
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-image: url("../../assets/images/icon/input-icon.png");
+            background-repeat: no-repeat;
+            background-position: center center;
+          }
+        }
+      }
+    }
+
+    //三角形
+    .triangle-down {
+      top: rem(6);
+      margin-left: rem(10);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 12px solid $gray;
+    }
+    //三角形
+    .triangle-up {
+      top: rem(6);
+      margin-left: rem(10);
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 12px solid $gray;
+    }
+  }
+}

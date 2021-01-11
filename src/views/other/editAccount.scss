@@ -1,0 +1,53 @@
+@import "../../style/common.scss";
+
+.editAccount {
+  .editAccountBox {
+    padding: rem(5) rem(10) rem(15);
+    background-color: #fff;
+    box-sizing: border-box;
+    .input-list {
+      width: 100%;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: rem(20);
+      padding: rem(10) 0;
+      box-sizing: border-box;
+      border-bottom: rem(1) solid #c6c6c6;
+      color: $gray;
+
+      input {
+        border: none;
+        text-align: right;
+        background: none;
+      }
+
+      input::-webkit-input-placeholder {
+        color: $gray;
+        font-weight: bold;
+      }
+
+      .imgInput{
+        position: absolute;
+        right: 0;
+        height: rem(70);
+        opacity: 0;
+      }
+    }
+  }
+  .qrcode {
+    width: 192px;
+  }
+  .submit {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 1.875rem;
+    padding: 0.625rem 0;
+    border-radius: 0.3125rem;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #277fe0;
+  }
+}

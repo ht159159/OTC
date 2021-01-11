@@ -1,0 +1,213 @@
+@import "../style/common.scss";
+
+//交易中心
+.trading-header {
+  width: 100%;
+  padding: rem(10);
+  box-sizing: border-box;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .center-icon {
+    width: rem(30);
+    height: rem(30);
+    // background-color: beige;
+    background-image: url("../assets/images/icon/user-icon.png");
+    background-size: contain;
+  }
+
+  .user-name {
+    width: 50%;
+    text-align: right;
+    color: #fff;
+    white-space: nowrap;
+    overflow-x: hidden;
+    line-height: rem(32);
+  }
+
+  .integral,
+  .medal {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    border-radius: rem(5);
+    background-color: #fff;
+    font-size: 12px;
+    padding: rem(7) rem(5);
+    box-sizing: border-box;
+  }
+
+  .integral-name,
+  .medal-name {
+    color: $gray;
+  }
+
+  .integral-value,
+  .medal-value {
+    color: #f2aa3b;
+  }
+}
+
+//訂單管理
+.layout-header {
+  width: 100%;
+  padding: rem(10);
+  box-sizing: border-box;
+  background-color: $blue;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  
+  .seach-box {
+    width: 60%;
+    margin: 0 auto;
+    position: relative;
+    .seach-input {
+      width: 100%;
+      height: 5vh;
+      border: none;
+      border-radius: rem(5);
+      padding: 0 rem(5);
+      box-sizing: border-box;
+    }
+    input::-webkit-input-placeholder {
+      color: $gray;
+    }
+    .seach-icon {
+      width: rem(25);
+      height: rem(25);
+      position: absolute;
+      top: rem(5);
+      right: rem(5);
+      // background-color: brown;
+      background-image: url("../assets/images/icon/seach-icon.png");
+      background-size: contain;
+    }
+  }
+  .change-nav {
+    width: 100%;
+
+    .change-nav-btn {
+      width: 8.5rem;
+      display: flex;
+      border: 1px solid #fff;
+      border-radius: 3px;
+      .change-buy, .change-sell{
+        background-color: $blue;
+      }
+      .change-buy{
+        padding: rem(4) rem(5);
+        border: rem(1) solid $blue;
+        border-radius: rem(3) 0px 0px rem(3);
+        color: #fff;
+      }
+
+      .change-sell{
+        padding: rem(4) rem(5);
+        border: rem(1) solid $blue;
+        border-radius: 0px rem(3) rem(3) 0px;
+        color: #fff;
+      }
+
+      .select {
+        color: $blue;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+.Page-header {
+  width: 100%;
+  padding: rem(10);
+  box-sizing: border-box;
+  background-color: $blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .page-title {
+    width: 100%;
+    color: #fff;
+    font-weight: bold;
+    line-height: rem(32);
+    font-size: 16px;
+  }
+
+  .home-icon {
+    width: rem(30);
+    height: rem(30);
+    // background-color: beige;
+    background-image: url("../assets/images/icon/home-icon.png");
+    background-size: contain;
+    position: absolute;
+  }
+  .detail-name {
+    width: 100%;
+    color: #fff;
+    white-space: nowrap;
+    overflow-x: hidden;
+    line-height: rem(30);
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .message-filling {
+    width: rem(20);
+    height: rem(20);
+    // background-color: brown;
+    // background-image: url("../assets/images/icon/remind-icon.png");
+    background-size: contain;
+  }
+}
+
+//訂單詳情
+.detail-header {
+  width: 100%;
+  padding: rem(10);
+  box-sizing: border-box;
+  background-color: $blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .home-icon {
+    width: rem(30);
+    height: rem(30);
+    // background-color: beige;
+    background-image: url("../assets/images/icon/home-icon.png");
+    background-size: contain;
+    position: absolute;
+  }
+  .detail-name {
+    width: 100%;
+    color: #fff;
+    white-space: nowrap;
+    overflow-x: hidden;
+    line-height: rem(30);
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+}
+
+// 左箭头
+.left-arrow {
+  display: inline-block;
+  width: rem(20);
+  height: rem(20);
+  position: absolute;
+}
+
+.left-arrow::after {
+  display: inline-block;
+  content: " ";
+  height: rem(10);
+  width: rem(10);
+  border-width: rem(3) rem(3) 0 0;
+  border-color: #fff;
+  border-style: solid;
+  transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+}

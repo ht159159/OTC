@@ -1,0 +1,11 @@
+<div class="TradingCenter">
+    <HeaderNav></HeaderNav>
+    <div class="trading-nav">
+        <div class="trading-nav-btn">
+            <router-link tag="div" :to="{ name: 'TradingCenterBuy' }" class="trading-buy" v-bind:class="{'select': currentView == 'TradingCenterBuy' }"> 购 买 </router-link>
+            <router-link tag="div" :to="{ name: 'TradingCenterSell' }" class="trading-sell" v-bind:class="{'select': currentView == 'TradingCenterSell' }"> 出 售 </router-link>
+        </div>
+    </div>
+    <router-view></router-view>
+    <FooterNav></FooterNav>
+</div>

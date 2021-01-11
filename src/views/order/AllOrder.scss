@@ -1,0 +1,100 @@
+@import "../../style/common.scss";
+.AllOrder {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height:calc(100% - #{rem(150)});
+  //background-color:#fff;
+  .allOrder-detail {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: rem(10);
+
+    .allOrder-detail-title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: rem(5) rem(10);
+      margin-bottom: rem(3);
+      box-sizing: border-box;
+
+      .title-box {
+        display: flex;
+        align-items: center;
+
+        .title-type {
+          font-size: rem(16);
+          font-weight: bold;
+          margin-right: rem(30);
+        }
+
+        .title-type-id {
+          font-weight: bold;
+          color: $blue;
+        }
+      }
+
+      .title-status {
+        padding: rem(1) rem(10);
+        box-sizing: border-box;
+        border-radius: rem(5);
+        background-color: $gray;
+        color: #fff;
+      }
+
+      .Unpaid {
+        background-color: red;
+      }
+      .AlreadyPaid {
+        background-color: #4eb345;
+      }
+      .Completed {
+        background-color: #277fe0;
+      }
+    }
+
+    .allOrder-detail-content {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: rem(5) rem(10);
+      box-sizing: border-box;
+
+      .content-detail {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        color: $gray;
+        font-size: .9rem;
+        //font-weight: bold;
+      }
+    }
+
+    // 右箭头
+    .right-arrow {
+      display: inline-block;
+      width: rem(20);
+      height: rem(20);
+      position: absolute;
+    }
+
+    .right-arrow::after {
+      display: inline-block;
+      content: " ";
+      height: rem(10);
+      width: rem(10);
+      border-width: rem(3) rem(3) 0 0;
+      border-color: #c4c4c4;
+      border-style: solid;
+      transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+    }
+  }
+  .noMoreData{
+    color: #8c8c8c;
+    //font-weight: bold;
+    margin-bottom: rem(60);
+  }
+}

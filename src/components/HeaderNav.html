@@ -1,0 +1,31 @@
+<div>
+    <!-- 自选交易 -->
+    <header class="trading-header" v-if="headerModule == 'styleOne'">
+        <div class="center-icon" @click="OtherPage"></div>
+        <div class="user-name">{{userInfo.nickName}}</div>
+    </header>
+
+    <!-- 订单管理 -->
+    <header class="layout-header" v-if="headerModule == 'styleTwo'">
+        <div class="change-nav">
+            <div class="change-nav-btn">
+                <div v-for="(item, i) in orderData" :class="{'change-buy': i == 0, 'change-sell': i == 1, 'select': i == onChangeIndex }" @click.stop="onChange(i)">
+                    {{ item.title }}
+                </div>
+            </div>
+            
+        </div>
+        <!--div class="seach-box">
+            <input class="seach-input" type="text" placeholder="请输入订单编号">
+            <div class="seach-icon"></div>
+        </div-->
+    </header>
+
+    <!-- 出售 -->
+    <header class="Page-header" v-if="headerModule == 'styleThree'">
+        <div class="left-arrow" @click="backPage" v-if="matchedName != 'OrderDetail'"></div>
+        <div class="home-icon" @click="home()" v-if="matchedName == 'OrderDetail'"></div>
+        <div class="page-title">{{headerName}}</div>
+        <div class="message-filling" v-if="matchedName == 'MessagePage'"></div>
+    </header>
+</div>

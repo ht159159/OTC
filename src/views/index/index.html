@@ -1,0 +1,14 @@
+<div v-if="!this.$storage.session.get('token')" class="index">
+    <div class="login-header">
+      <div class="left-arrow"></div>
+      <div>登录</div>
+    </div>
+    <div  class="login-content">
+        <div class="login-icon"></div>
+        <div class="input-box">
+            <input type="text" placeholder="请输入手机号" required>
+            <input type="text" placeholder="请输入密码" required>
+        </div>
+    </div>
+    <div class="login-btn">立即登录</div>
+  </div>

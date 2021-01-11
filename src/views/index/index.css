@@ -1,0 +1,112 @@
+@charset "UTF-8";
+/* 共用函式 */
+/* 共用變數 */
+.index {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column;
+          flex-flow: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.index .login-header {
+  width: 100%;
+  padding: 0.75rem 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 1.625rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background-color: #fff;
+  -webkit-box-shadow: 0px 0px 0.6875rem 0.1875rem rgba(51, 51, 102, 0.3);
+          box-shadow: 0px 0px 0.6875rem 0.1875rem rgba(51, 51, 102, 0.3);
+}
+
+.index .login-header div {
+  margin-left: 0.9375rem;
+}
+
+.index .login-content {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 0.625rem;
+  padding: 0 1.25rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.index .login-content .login-icon {
+  width: 3.125rem;
+  height: 3.125rem;
+  margin-top: 0.625rem;
+}
+
+.index .login-content .input-box {
+  width: 75%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: wrap;
+      flex-flow: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.index .login-content .input-box input {
+  width: 100%;
+  height: 2.375rem;
+  margin: 0.625rem 0;
+  padding: 0 0.3125rem;
+  font-size: 1rem;
+  font-weight: bold;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: none;
+  color: #000;
+}
+
+.index .login-content .input-box input::-webkit-input-placeholder {
+  color: #8c8c8c;
+}
+
+.index .login-btn {
+  width: 90%;
+  padding: 0.625rem 0;
+  font-size: 1rem;
+  color: #fff;
+  background-color: #277fe0;
+  border-radius: 1.875rem;
+  margin-top: 1.875rem;
+}
+
+.index .left-arrow {
+  display: inline-block;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.index .left-arrow::after {
+  display: inline-block;
+  content: " ";
+  height: 0.75rem;
+  width: 0.75rem;
+  border-width: 0.1875rem 0.1875rem 0 0;
+  border-color: #000;
+  border-style: solid;
+  -webkit-transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+          transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+}
+/*# sourceMappingURL=index.css.map */

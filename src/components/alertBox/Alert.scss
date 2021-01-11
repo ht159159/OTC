@@ -1,0 +1,64 @@
+@import "../../style/common.scss";
+.alert-cmp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+
+  .alert-bg {
+    position: absolute;
+    width: 100vw;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+
+.deleteAlert-content{
+  padding: rem(10) rem(10);
+  box-sizing: border-box;
+  font-size: 14px;
+}
+  .alert-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: rem(300);
+    background-color: #fff;
+    border-radius: rem(10);
+    overflow: hidden;
+    font-size: 14px;
+    //font-weight: bold;
+  }
+
+  .alert-box-text{
+      padding: rem(10) rem(10);
+      box-sizing: border-box;
+      color: red;
+      font-size: 16px;
+      font-weight: bold;
+  }
+
+  .alert-box > div:first-child {
+    background: #fff;
+  }
+
+  .alert-btn-box {
+    width: 100%;
+    display: flex;
+
+    .alert-btn {
+      width: 50%;
+      padding: rem(10) 0;
+      box-sizing: border-box;
+      border-top: 1px solid #c6c6c6;
+      border-right: 1px solid #c6c6c6;
+    }
+
+    .alert-btn-ok{
+        color: $blue;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@import "../../style/common.scss";
+.trading-detail-box {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  height: calc(100% - #{rem(115)});
+  padding-bottom: rem(55);
+  box-sizing: border-box;
+
+  .trading-detail {
+    //display: flex;
+    //flex-flow: column;
+    margin-bottom: rem(10);
+
+    .trading-detail-title {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: rem(5) rem(10);
+      font-weight: bold;
+
+      .title-box {
+        display: flex;
+        align-items: center;
+      }
+
+      .title-icon {
+        width: rem(15);
+        height: rem(15);
+        // background-color: aqua;
+        background-image: url("../../assets/images/icon/headPortrait-icon.png");
+        background-size: contain;
+        margin-right: rem(10);
+      }
+
+      .title-content {
+        font-size: rem(12);
+        color: $gray;
+      }
+    }
+
+    .trading-detail-content {
+      display: flex;
+      justify-content: space-between;
+      margin-top: rem(4);
+      padding: rem(10);
+      box-sizing: border-box;
+      background-color: #fff;
+
+      .content-detail {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+      }
+
+      .content-name {
+        font-size: rem(24);
+        font-weight: bold;
+
+        span {
+          font-size: rem(15);
+        }
+
+        ~ p {
+          color: $gray;
+        }
+      }
+    }
+
+    .content-btn {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
+
+      .pay-icon-box {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      .pay-icon {
+        width: rem(20);
+        height: rem(20);
+        // background-color: brown;
+        // background-image: url("../../assets/images/icon/alipay-icon.png");
+        background-size: contain;
+        margin-left: rem(5);
+      }
+
+      .alipay-icon{
+        background-image: url("../../assets/images/icon/alipay-icon.png");
+      }
+      .bankCard-icon{
+        background-image: url("../../assets/images/icon/bankCard-icon.png");
+      }
+      .weChat-icon{
+        background-image: url("../../assets/images/icon/weChat-icon.png");
+      }
+
+      .sell-btn {
+        padding: rem(7) rem(35);
+        border: 1px solid #277fe0;
+        border-radius: rem(3);
+        color: #fff;
+        background-color: #277fe0;
+      }
+    }
+  }
+}

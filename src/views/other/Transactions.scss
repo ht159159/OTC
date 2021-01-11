@@ -1,0 +1,87 @@
+@import "../../style/common.scss";
+.Transactions {
+  overflow-y: scroll;
+  height:calc(100% - #{rem(1)});
+  //background-color:#fff;
+  .Transactions-detail {
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    margin-bottom: rem(10);
+
+    .Transactions-detail-title {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      background-color: #fff;
+      padding: rem(10) rem(10);
+      margin-bottom: rem(3);
+      box-sizing: border-box;
+
+      .title-box {
+        display: flex;
+        align-items: center;
+
+        .title-type {
+          font-size: rem(16);
+          font-weight: bold;
+          margin-right: rem(10);
+        }
+
+        .title-type-id {
+          font-weight: bold;
+          color: $blue;
+        }
+      }
+
+      .title-status {
+        padding: rem(1) rem(10);
+        box-sizing: border-box;
+        border-radius: rem(5);
+        background-color: $gray;
+        color: #fff;
+      }
+
+      .Unpaid {
+        background-color: red;
+      }
+      .AlreadyPaid {
+        background-color: #4eb345;
+      }
+      .Completed {
+        background-color: #277fe0;
+      }
+    }
+
+    .Transactions-detail-content {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      padding: rem(10) rem(20);
+      line-height: rem(25);
+      box-sizing: border-box;
+
+      .content-detail {
+        display: flex;
+        flex-flow: column;
+        align-items: flex-start;
+        color: $gray;
+        font-size: .9rem;
+        //font-weight: bold;
+      }
+      .sell {
+        color: red;
+      }
+      .buy {
+        color: #4eb345;
+      }
+    }
+  }
+  .noMoreData{
+    color: #8c8c8c;
+    //font-weight: bold;
+    margin-bottom: rem(60);
+  }
+}

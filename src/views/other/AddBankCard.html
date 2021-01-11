@@ -1,0 +1,14 @@
+<div class="AddBankCard">
+    <HeaderNav></HeaderNav>
+    <main class="addBankCard-main">
+        <div v-for="(item, i) in addBankCardData" class="addBankCard-list">{{item.listName}}
+            <input type="text" :readonly="i==2" :placeholder="item.placeholder" :maxlength="item.maxlength"  @keyup="listenerInput" v-model="addBankCardData[i].value"/>
+        </div>
+        <div class="remind">
+            <p>1，为确保您能及时正确的收到款项，请务必填写正确的收款信息，否则将无法到账。</p>
+            <p>2，为确保信息安全，交易安全码设定完成后将无法修改，如需修改请删除该条目后重新添加。</p>
+        </div>
+        <!-- <div class="submit" @click="submit">确认添加</div> -->
+        <NumericKeypad v-on:safepwd="safepwd"></NumericKeypad>
+    </main>
+</div>

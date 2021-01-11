@@ -1,0 +1,143 @@
+@import "../../style/common.scss";
+.AddAlipay {
+  font-size: rem(16);
+
+  .addAlipay-main {
+    width: 100%;
+    padding: 0 rem(10);
+    box-sizing: border-box;
+    font-size: rem(14);
+
+    .addAlipay-list {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: rem(20);
+      padding: rem(10) 0;
+      box-sizing: border-box;
+      border-bottom: rem(1) solid #c6c6c6;
+      color: $gray;
+
+      input {
+        border: none;
+        text-align: right;
+        background: none;
+      }
+
+      input::-webkit-input-placeholder {
+        color: $gray;
+        //font-weight: bold;
+      }
+    }
+    .remind {
+      text-align: left;
+      margin-top: rem(5);
+      font-size: rem(12);
+      color: red;
+      p{
+        padding: rem(5) 0;
+      }
+    }
+    .submit {
+      width: 80%;
+      margin: 0 auto;
+      margin-top: rem(30);
+      padding: rem(10) 0;
+      border-radius: rem(5);
+      color: #fff;
+      font-size: rem(16);
+      font-weight: bold;
+      background-color: $blue;
+    }
+  }
+
+  .QRcode {
+    width: 100%;
+    height: rem(192);
+    background-color: #ebebeb;
+    margin-top: rem(20);
+    padding: rem(10) 25%;
+    box-sizing: border-box;
+    font-weight: bold;
+    position: relative;
+
+    img{
+      width: auto;
+      height: -webkit-fill-available;
+    }
+
+    input{
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      z-index: 1;
+    }
+
+    p {
+      text-align: center;
+      color: $blue;
+    }
+  }
+
+  // 左箭头
+  .left-arrow {
+    display: inline-block;
+    width: rem(20);
+    height: rem(20);
+  }
+
+  .left-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: rem(10);
+    width: rem(10);
+    border-width: rem(3) rem(3) 0 0;
+    border-color: #fff;
+    border-style: solid;
+    transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+  }
+  .file_box{
+    width: 100%;
+
+    .upload {
+      width: 3rem;
+      height: 3rem;
+      display: inline-block;
+      border-radius: 0.2rem;
+      position: relative;
+      // margin-left: 1.12rem;
+      // margin-top: 0.78rem;
+      background: #000 ;
+      background-size: 0.72rem 0.72rem;
+    }
+    .upload input{
+        position: absolute;
+        width: 3rem;
+        height: 3rem;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 2222;
+    }
+    .file_box img{
+        width: 3rem;
+        height: 3rem;
+        line-height: 3rem;
+        display: block;
+        float: left;
+        border: 0.02rem solid #E5E5E5;
+        width: 100%;
+    }
+    .upload i {
+          position: absolute;
+          bottom: 0.36rem;
+          left: 0.72rem;
+          color: #FFFFFF;
+          font-size: 0.4rem;
+    }
+  }
+}

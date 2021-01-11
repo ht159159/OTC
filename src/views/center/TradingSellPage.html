@@ -1,0 +1,57 @@
+<div class="TradingBuyPage">
+    <HeaderNav></HeaderNav>
+    <div class="buy-detail" v-if="sellMerchantData.merchantNickName">
+        <div class="buy-detail-header">
+            <div class="buy-detail-icon"></div>
+            <div class="buy-detail-name">{{sellMerchantData.merchantNickName}}</div>
+        </div>
+        <div class="buy-detail-list">
+            <div class="price">
+                <div class="price-name">单价</div>
+                <div class="price-value">{{sellMerchantData.realPrice}} / USDT</div>
+            </div>
+            <div class="range">
+                <div class="range-name">交易范围</div>
+                <div class="range-value">{{sellMerchantData.minAmount}}~{{sellMerchantData.maxAmount}}</div>
+            </div>
+            <div class="range">
+                <div class="range-name">剩余数量</div>
+                <div class="range-value">{{sellMerchantData.usableAmount}}</div>
+            </div>
+
+            <div class="balance">
+                <div class="balance-name">帐户余额</div>
+                <div class="balance-value"><span v-if="!userInfo.balance">查询中...</span>{{userInfo.balance}}</div>
+            </div>
+            <div class="collection">
+                <select v-model="selected">
+                    <option value=0>请选择收款方式</option>
+                    <option :value=item.id v-for="item  in accountsList">
+                        <span v-if="item.type == 1">银行卡</span>
+                        <span v-if="item.type == 2">支付宝</span>
+                        <span v-if="item.type == 3">微信</span> , {{item.name}} , {{item.no}}
+                    </option>
+                </select>
+
+                <router-link tag="div" v-if="setCollectionBtn" :to="{ name: 'SetCollectionPage' }" class="balance-value">设置收款讯息</router-link>
+            </div>
+            <div class="amount">
+                <div class="amount-name">出售数量</div>
+                <div class="amount-value">
+                    <div v-for="(item, i) in autoAmountBtn" @click="autoAmount(i)">{{item.amount}}</div>
+                </div>
+                <input class="amount-input" type="text" placeholder="请输入数量" @keyup="calc()" v-model="amount">
+            </div>
+            <div class="total">
+                <div class="total-name">总价</div>
+                <div class="total-value">{{total}} CNY</div>
+            </div>
+        </div>
+
+        <div class="submit" @click="sellSubmit">确 定</div>
+
+        <div class="ps" v-if='sellMerchantData.message !== null'>备注 : {{sellMerchantData.message}}</div>
+    </div>
+
+
+</div>

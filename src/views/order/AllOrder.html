@@ -1,0 +1,28 @@
+<div class="AllOrder" @scroll="gd_add">
+    <div class="allOrder-detail" v-for="item in ordersList" @click="detail(item)">
+        <div class="allOrder-detail-title">
+            <div class="title-box">
+                <div class="title-type" v-if="ordersData.type == 1">购买</div>
+                <div class="title-type" v-else>出售</div>
+                <div class="title-type-id">订单号 : {{item.no}}</div>
+            </div>
+            <div class="title-status" :class="{'Unpaid':item.status==1 || item.status==0 || item.status==-2 || item.status==-3, 'AlreadyPaid':item.status==2, 'Completed':item.status==3}">
+                {{item.statusName}}
+            </div>
+        </div>
+        <div class="allOrder-detail-content">
+            <div class="content-detail">
+                <p>创建时间 : {{item.createTime}}</p>
+                <p>交易单价 : {{item.realPrice}} CNY/USDT</p>
+                <p>交易数量 : {{item.count}} USDT</p>
+                <p>交易金额 : {{item.amount}} CNY</p>
+                <p>交易对象 : {{item.merchantNickName}}</p>
+            </div>
+            <div class="content-btn">
+                <div class="right-arrow"></div>
+            </div>
+        </div>
+    </div>
+    <div class="noMoreData" v-if="moreData">加载中...</div>
+    <div class="noMoreData"></div>
+</div>

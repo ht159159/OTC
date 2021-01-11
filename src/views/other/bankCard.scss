@@ -1,0 +1,130 @@
+@import "../../style/common.scss";
+
+.bankCard {
+  width: 100%;
+
+  // .accountsBox {
+  //   width: 100%;
+  //   padding: rem(10) rem(20);
+  //   box-sizing: border-box;
+
+  //   .accountsList {
+  //     width: 100%;
+  //     display: flex;
+  //     justify-content: space-between;
+  //     align-items: center;
+  //     //   border-bottom: 1px solid $gray;
+  //     margin-bottom: rem(15);
+  //     padding: rem(10);
+  //     box-sizing: border-box;
+  //     background: #fff;
+
+  //     .accountContent {
+  //       width: 80%;
+  //       display: flex;
+  //       align-items: center;
+  //       text-align: left;
+  //       border-right: rem(1) solid $gray;
+
+  //       .accountTitle {
+  //         width: 30%;
+  //         overflow: hidden;
+  //         text-overflow: ellipsis; //溢出用省略号显示
+  //         white-space: nowrap; //溢出不换行
+  //         margin-right: rem(5);
+  //       }
+  //       img {
+  //         width: 10vw;
+  //         margin-right: rem(5);
+  //       }
+  //     }
+
+  //     .edit {
+  //       width: 20%;
+  //     }
+  //     .delete {
+  //       width: 5vw;
+  //       height: 2.5vh;
+  //       background-image: url("../../assets/images/icon/delete-icon.png");
+  //       background-repeat: no-repeat;
+  //       background-size: contain;
+  //     }
+  //   }
+  // }
+  .accountsBox {
+    width: 100%;
+    padding: rem(10) rem(20);
+    box-sizing: border-box;
+
+    .accountsList {
+      width: 100%;
+      display: flex;
+      position: relative;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: rem(15);
+      padding: rem(10);
+      box-sizing: border-box;
+      background: #fff;
+
+      .accountContent {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        text-align: left;
+        flex-flow: column;
+        .accountList{
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+        .accountTitle {
+          width: 35%;
+          height: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis; //溢出用省略号显示
+          white-space: nowrap; //溢出不换行
+          margin-right: rem(5);
+          margin: rem(5) 0;
+          color: #8c8c8c;
+        }
+        .accountValue {
+          height: 30px;
+        }
+        img {
+          width: 192px;
+          margin-right: rem(5);
+        }
+      }
+
+      .edit {
+        width: 20%;
+      }
+      .delete {
+        width: 5vw;
+        height: 2.5vh;
+        position: absolute;
+        right: rem(10);
+        top: rem(10);
+        background-image: url("../../assets/images/icon/delete-icon.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
+
+  .deleteAlert-content {
+    color: red;
+    margin-bottom: rem(10);
+  }
+  .submit {
+    width: 80%;
+    margin: 0 auto;
+    // margin-top: rem(30);
+    padding: rem(10) 0;
+    border-radius: rem(5);
+    color: #fff;
+    font-weight: bold;
+    background-color: #277fe0;
+  }
+}

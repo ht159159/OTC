@@ -1,0 +1,13 @@
+<div class="alert-cmp">
+    <div class="alert-bg" @click.prevent="$emit('close')"></div>
+    <div class="alert-box">
+        <div>
+            <div class="alert-box-text">
+                <div>{{ text }}</div>
+            </div>
+        </div>
+        <div class="alert-box-button">
+            <slot name="btn"></slot>
+        </div>
+    </div>
+</div>

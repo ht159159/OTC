@@ -1,0 +1,29 @@
+<div class="AddWeChatPay">
+    <HeaderNav></HeaderNav>
+    <main class="addWeChatPay-main">
+        <div v-for="(item, i) in addWeChatPayData">
+            <div class="addWeChatPay-list">
+                {{item.listName}}
+                <input type="text" :placeholder="item.placeholder" v-model="addWeChatPayData[i].value"/>
+            </div>
+            <div v-if="i===1" class="QRcode">
+                <img :src=form.imgURL alt="">
+                <input type="file" name="" id="" value="" name="saveFile" accept="image/*" @change="tirggerFile($event)"/>
+                <p v-if="form.imgURL === ''"><span>点击上传收款二位码</span></p>
+            </div>
+        </div>
+        <div class="remind">
+            <p>1，为确保您能及时正确的收到款项，请务必填写正确的收款信息，否则将无法到账。</p>
+            <p>2，为确保信息安全，交易安全码设定完成后将无法修改，如需修改请删除该条目后重新添加。</p>
+        </div>
+        <!-- <div class="submit" @click="submit">确认添加</div> -->
+        <NumericKeypad v-on:safepwd="safepwd"></NumericKeypad>
+        <!-- <div>
+
+            <div class="testN" @click="clickTest('aaaa')">1</div>
+            <div class="testN" @click="clickTest('bbbb')">2</div>
+            <div class="testN" @click="clickTest('cccc')">3</div>
+        </div>
+        <div>{{ test }}</div> -->
+    </main>
+</div>

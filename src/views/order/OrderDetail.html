@@ -1,0 +1,145 @@
+<div class="OrderDetail">
+    <HeaderNav></HeaderNav>
+    <!-- // type == 2 出售页面显示 -->
+    <!-- 出售 已付款(status == 2)显示 -->
+    <main class="detail-main" v-if="detailList">
+        <div class="detail-title">
+            <span v-if="detailList.type == 1">[购买]</span>
+            <span v-else>[出售]</span>订单号 : {{detailList.no}}
+            <div class="detail-title-id">[<a href="javascript:void(0)" v-clipboard:copy="detailList.no" v-clipboard:success="onCopy"
+                v-clipboard:error="onError">复制</a>]
+            </div>
+        </div>
+        <transition name="draw">
+            <div class="detail-content" v-show="detailShow">
+                <div class="detail-content-header">
+                    <div class="detail-content-buy">
+                        <p v-if="detailList.type == 1">购买</p>
+                        <p v-else>出售</p>
+                        <p>{{detailList.count}} USDT</p>
+                    </div>
+                    <div class="detail-content-sell">
+                        <p v-if="detailList.type == 1">支出</p>
+                        <p v-else>收入</p>
+                        <p>{{detailList.realPrice*detailList.count}} CNY</p>
+                    </div>
+                    <div class="detail-status"
+                        :class="{'Paid':detailList.status==2,'Complete':detailList.status==3,'Unpaid':detailList.status==1 || detailList.status==0 || detailList.status==-2 || detailList.status==-3}">{{detailList.statusName}}</div>
+                </div>
+                <div class="detail-item">
+                    <div>交易单价:{{detailList.realPrice}}CNY/USDT</div>
+                    <div></div>
+                    <div>交易金额:{{detailList.realPrice*detailList.count}}CNY</div>
+                    <div></div>
+                    <div>附言码:{{detailList.trmo}}</div>
+                    <div></div>
+                </div>
+                <!--div class="detail-item" v-if="detailList.type == 2 || detailList.type == 1 && detailList.status == 2">
+                    <div v-if="detailList.type == 2">收款方式</div>
+                    <div v-if="detailList.status == 2 && detailList.type == 1">付款方式</div>
+                    <div>{{detailList.memberAccountType}}</div>
+                </div>
+                <div class="detail-item" v-if="detailList.type == 2 || detailList.type == 1 && detailList.status == 2">
+                    <div v-if="detailList.type == 2">收款用户姓名</div>
+                    <div v-if="detailList.type == 1 && detailList.status == 2">付款款用户姓名</div>
+                    <div>{{detailList.memberAccountName}}</div>
+                </div>
+                <div class="detail-item" v-if="detailList.type == 2 || detailList.type == 1 && detailList.status == 2">
+                    <div v-if="detailList.type == 2">收款帐号</div>
+                    <div v-if="detailList.type == 1 && detailList.status == 2">付款帐号</div>
+                    <div>{{detailList.memberAccountNo}}</div>
+                </div>
+                    <div class="detail-item" v-if="detailList.type == 1 && detailList.status == 2">
+                    <div v-if="detailList.type == 1 && detailList.status == 2">收款方式</div>
+                    <div v-if="detailList.type == 2 && detailList.status == 2">付款方式</div>
+                    <div>{{detailList.merchantAccountType}}</div>
+                </div>
+                <div class="detail-item" v-if="detailList.type == 1 && detailList.status == 2">
+                    <div v-if="detailList.type == 1 && detailList.status == 2">收款用户姓名</div>
+                    <div v-if="detailList.type == 2 && detailList.status == 2">付款用户姓名</div>
+                    <div>{{detailList.merchantAccountName}}</div>
+                </div>
+                <div class="detail-item" v-if="detailList.type == 1 && detailList.status == 2">
+                    <div v-if="detailList.type == 1 && detailList.status == 2">收款帐号</div>
+                    <div v-if="detailList.type == 2 && detailList.status == 2">付款帐号</div>
+                    <div>{{detailList.merchantAccountNo}}</div>
+                </div-->
+
+                <!-- 未付款显示status == 1 -->
+                <div class="chatHeader" v-if="detailList.status == 1">
+
+                    <div class="collection" v-if="detailList.type == 1">
+                        <div class="collection-name" v-if="detailList.type == 1">付款方式</div>
+                        <div class="collection-name" v-else>收款方式</div>
+                        <span v-if="accountsList == ''" @click="SetCollection">点我设置收付款账号</span>
+                        <select v-model="selected" v-else>
+                            <option value=0>请选择</option>
+                            <option :value=item.id v-for="item  in accountsList">
+                                <span v-if="item.type == 1">银行卡</span><span v-if="item.type == 2">支付宝</span><span
+                                    v-if="item.type == 3">微信</span> , {{item.name}} , {{item.no}}
+                            </option>
+                        </select>
+
+                    </div>
+
+                    <div class="collection" v-if="detailList.type == 1">
+                        <div class="collection-name" v-if="detailList.type == 1">卖家收款方式</div>
+                        <div class="collection-name" v-else>卖家付款方式</div>
+                        <select v-model="selectedSeller">
+                            <option value=0>请选择</option>
+                            <option :value=item.id v-for="item  in sellerAccountList">
+                                <span v-if="item.type == 1">银行卡</span><span v-if="item.type == 2">支付宝</span><span
+                                    v-if="item.type == 3">微信</span> , {{item.name}} , {{item.no}}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="cancelDeal" @click="updateOrder(-1)">取消交易</div>
+                    <div class="paid" @click="updateOrder(2)" v-if="detailList.type == 1">我已付款</div>
+                    <div class="prompt" v-show="!isTimeout" v-if="detailList.type == 1">
+                        <p>1，如您已经向卖方账户转款，请务必点击【我已付款】，及发送交易凭证到交易所对话框，否则将可能造成资金损失!</p>
+                        <p>2，订单将在{{detailList.cancelOrderTime}}自动取消，如一天多次取消，则当日无法再次进行交易。订单自动取消时间为：{{detailList.autoCancelOrderTime}}分钟</p>
+                    </div>
+                    <div class="prompt" v-show="!isTimeout" v-else>
+                        <p>1，请联系买方付款，及发送交易凭证到交易所对话框，否则将可能造成资金损失!</p>
+                        <p>2，订单将在{{detailList.cancelOrderTime}}自动取消，如一天多次取消，则当日无法再次进行交易。订单自动取消时间为：{{detailList.autoCancelOrderTime}}分钟</p>
+                    </div>
+                </div>
+
+                <!-- 出售 已付款(status == 2)显示 -->
+                <div class="chatHeaderSell" v-if="detailList.status == 2 && detailList.type == 2">
+                    <div class="cancelDeal" @click="updateOrder(-2)">未收到款</div>
+                    <div class="paid" @click="updateOrder(3)">已收到款</div>
+                    <div class="prompt">
+                        <p>1，如您已经收到款项，请务必点击【已收到款】，联系买方发送交易凭证到交易所对话框，否则将可能造成资金损失！</p>
+                        <p>2，如您未收到款项，请先与买家或者客服联系沟通解决，如无法解决请务必点击【未收到款】，订单状态变为申诉状态，您的账户将暂时无法进行任何交易，系统将介入调解！</p>
+                    </div>
+                </div>
+            </div>
+        </transition>
+        <div class="accordion" @click="toggle()" v-if="detailList.status == 1 || detailList.status == 2">
+            <div v-if="detailShow">收起详情</div>
+            <div v-if="!detailShow">展开详情</div>
+            <div :class="{'triangle-up':detailShow, 'triangle-down':!detailShow}"></div>
+        </div>
+        <section class="chatBox" ref="chatBox" v-if="detailList.status == 1 || detailList.status == 2">
+            <div class="chat" ref="chatArea" id="chatArea">
+                <div class="chatMsg" :class="{'userMsg':item.sendByOneSelf}" v-for="item in readList.messages">
+                    <div v-if="item.messageType === 1">{{item.messageContent}}</div>
+                    <img :src=item.messageContent alt="" v-else>
+                </div>
+            </div>
+            <div class="chatFooter" ref="chatFooter">
+                <div class="uploadImg">
+                    <input type="file" class="imgInput" name="saveFile" accept="image/*"
+                        @change="tirggerFile($event)" />
+                </div>
+
+                <div class="chatInputBox">
+                    <input type="text" class="chatInput" v-model.trim="chatContent">
+                    <div class="chatSubmit" @click="chatSubmit"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+</div>

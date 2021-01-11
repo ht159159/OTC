@@ -1,0 +1,15 @@
+<footer class="footer-nav">
+    <router-link tag="div" :to="{ name: 'TradingCenterBuy' }" class="footer-nav-icon"
+        :class="{'iconSelect': currentView == 'TradingCenter' }">
+        <div class="TradingCenterBuy"></div>自选交易
+    </router-link>
+    <router-link tag="div" :to="{ name: 'AllOrder' }" class="footer-nav-icon"
+        :class="{'iconSelect': currentView == 'OrderLayout' }">
+        <div class="AllOrder"></div>我的订单
+    </router-link>
+
+    <router-link tag="div" :to="{ name: 'OtherPage' }" class="footer-nav-icon"
+        :class="{'iconSelect': currentView == 'OtherPage' }">
+        <div class="OtherPage"></div>设置
+    </router-link>
+</footer>

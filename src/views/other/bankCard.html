@@ -1,0 +1,42 @@
+<div class="bankCard">
+    <HeaderNav></HeaderNav>
+    <div class="accountsBox">
+        <div v-for="(item, i) in bankCardList" class="accountsList" v-if="item.type == 1">
+            <div class="accountContent">
+                <!-- <img :src="item.image" alt=""> -->
+                <div class="accountList">
+                    <div class="accountTitle">姓名 : </div>
+                    <div class="accountValue">{{item.name}}</div>
+                </div>
+                <div class="accountList">
+                    <div class="accountTitle">银行名称 : </div>
+                    <div class="accountValue">{{item.bankName}}</div>
+                </div>
+                <div class="accountList">
+                    <div class="accountTitle">银行帐号 : </div>
+                    <div class="accountValue">{{item.no}}</div>
+                </div>
+            </div>
+            <div class="delete" @click="deleteAccount(i)"></div>
+        </div>
+
+    </div>
+    <!-- <div class="edit submit" @click="edit(1)" v-if='editShow'>编辑银行卡</div> -->
+
+    <router-link tag="div" class="submit" :to="{ name: 'AddBankCard' }" v-if='!editShow'>
+        添加银行卡
+    </router-link>
+    
+    <!-- <modal-alert v-if="deleteAlertShow" :text='"删除帐户"'>
+        <template #btn>
+            <div class="deleteAlert-content">
+                <p>是否确定删除</p>
+                <p>ㅤ</p>
+            </div>
+            <div class="alert-btn-box">
+                <div class="alert-btn" @click="cancel">取消</div>
+                <div class="alert-btn alert-btn-ok" @click="determine">确定</div>
+            </div>
+        </template>
+    </modal-alert> -->
+</div>

@@ -1,0 +1,16 @@
+<div class="editAccount">
+    <HeaderNav></HeaderNav>
+
+    <div class="editAccountBox">
+        <div class="input-list">姓名 <input type="text" placeholder="请输入用户名" v-model="bankCardList.name"></div>
+        <div class="input-list" v-if="apiDetailsData.type === 1">银行名称 <input type="text" placeholder="请输入银行名称" v-model=bankCardList.bankName></div>
+        <div class="input-list" v-if="apiDetailsData.type === 1">银行帐号 <input type="text" placeholder="请输入银行帐号" v-model=bankCardList.no></div>
+        <div class="input-list" v-if="apiDetailsData.type === 2">支付宝帐号 <input type="text" placeholder="请输入支付宝帐号" v-model=bankCardList.no></div>
+        <div class="input-list" v-if="apiDetailsData.type === 2"><input type="file" class="imgInput" name="saveFile" accept="image/*" @change="tirggerFile($event)"/>收款二位码 <img class="qrcode" :src=bankCardList.image alt=""></div>
+        <div class="input-list" v-if="apiDetailsData.type === 3">微信帐号 <input type="text" placeholder="请输入微信帐号" v-model=bankCardList.no></div>
+        <div class="input-list" v-if="apiDetailsData.type === 3"><input type="file" class="imgInput" name="saveFile" accept="image/*" @change="tirggerFile($event)"/>收款二位码 <img class="qrcode" :src=bankCardList.image alt=""></div>
+        <div class="input-list">安全码 <input type="text" placeholder="请输入安全码" v-model="bankCardList.safeCode"></div>
+        <div class="submit" @click="editSubmit">确认修改</div>
+    </div>
+
+</div>

@@ -1,0 +1,12 @@
+<div class="OrderLayout">
+    <HeaderNav></HeaderNav>
+    <main class="layout-main">
+        <div class="layout-nav">
+            <div v-for="(item, i) in allOrderNavData" :class="{'select': changeNumber == i }" @click="changeOrder(i)">
+                {{item.name}}
+            </div>
+        </div>
+        <router-view :changeNumber="changeNumber" :allOrderNavData="allOrderNavData"></router-view>
+    </main>
+    <FooterNav></FooterNav>
+</div>

@@ -1,0 +1,41 @@
+<div class="weChatPay">
+    <HeaderNav></HeaderNav>
+    <div class="accountsBox">
+        <div v-for="(item, i) in weChatPayList" class="accountsList" v-if="item.type == 3">
+            <div class="accountContent">
+                <div class="accountList">
+                    <div class="accountTitle"> 姓名 : </div>
+                    <div class="accountValue">{{item.name}}</div>
+                </div>
+                <div class="accountList">
+                    <div class="accountTitle"> 微信号 : </div>
+                    <div class="accountValue">{{item.no}}</div>
+                </div>
+                <div class="accountList">
+                    <div class="accountTitle"> 收款二位码 : </div>
+                    <img :src=item.image alt="">
+                </div>
+            </div>
+            <div class="delete" @click="deleteAccount(i)"></div>
+        </div>
+    </div>
+
+    <!-- <div class="edit submit" @click="edit(3)" v-if='editShow'>编辑微信</div> -->
+
+    <router-link tag="div" class="submit" :to="{ name: 'AddWeChatPay' }" v-if='!editShow'>
+        添加微信
+    </router-link>
+
+    <!-- <modal-alert v-if="deleteAlertShow" :text='"删除帐户"'>
+        <template #btn>
+            <div class="deleteAlert-content">
+                <p>是否确定删除</p>
+                <p>ㅤ</p>
+            </div>
+            <div class="alert-btn-box">
+                <div class="alert-btn" @click="cancel">取消</div>
+                <div class="alert-btn alert-btn-ok" @click="determine">确定</div>
+            </div>
+        </template>
+    </modal-alert> -->
+</div>

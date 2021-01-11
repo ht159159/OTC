@@ -1,0 +1,114 @@
+@import "../../style/common.scss";
+.SetCollectionPage {
+  font-size: rem(16);
+
+  .setCollectionPage-main {
+    width: 100%;
+    margin-top:.9rem;
+
+    .setCollection-list {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: rem(15) rem(15);
+      box-sizing: border-box;
+      background-color: #fff;
+      margin-bottom: rem(10);
+      font-weight: bold;
+
+      .list-title {
+        display: flex;
+        align-items: center;
+
+        .list-title-icon {
+          width: rem(20);
+          height: rem(20);
+          margin-right: rem(10);
+          // background-color: brown;
+        }
+
+        .list-title-name{
+          font-size: rem(14);
+        }
+      }
+    }
+  }
+
+  .setPassword-box {
+    display: flex;
+    align-items: center;
+    padding: rem(15) rem(10);
+    box-sizing: border-box;
+    border-bottom: rem(1) solid #c6c6c6;
+
+    .setPassword-title {
+      font-size: rem(12);
+      color: #777676;
+      font-weight: normal;
+      margin-right: rem(20);
+    }
+
+    .setPassword-input {
+      width: 55%;
+      border: none;
+      font-size: rem(12);
+    }
+
+    input::-webkit-input-placeholder {
+      color: #c6c6c6;
+    }
+
+    .password-show-icon {
+      width: rem(20);
+      height: rem(20);
+      // background-color: brown;
+      background-image: url("../../assets/images/icon/passwordHide-icon.png");
+      background-size: contain;
+    }
+  }
+
+  .setPassword-content {
+    padding: rem(5) rem(10);
+    box-sizing: border-box;
+    color: red;
+    font-size: rem(12);
+  }
+
+  // 左箭头
+  .left-arrow {
+    display: inline-block;
+    width: rem(20);
+    height: rem(20);
+  }
+
+  .left-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: rem(10);
+    width: rem(10);
+    border-width: rem(3) rem(3) 0 0;
+    border-color: #fff;
+    border-style: solid;
+    transform: matrix(-0.71, 0.71, 0.71, 0.71, 0, 0);
+  }
+
+  // 右箭头
+  .right-arrow {
+    display: inline-block;
+    position: relative;
+    width: rem(20);
+    height: rem(20);
+  }
+
+  .right-arrow::after {
+    display: inline-block;
+    content: " ";
+    height: rem(10);
+    width: rem(10);
+    border-width: rem(3) rem(3) 0 0;
+    border-color: #c7c7cc;
+    border-style: solid;
+    transform: matrix(0.71, 0.71, -0.71, 0.71, 0, 0);
+  }
+}
